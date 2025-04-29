@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Employee = require("../model/employee");
+const authenticateToken = require("../middlewares/authMiddleware");
 
 //BaseUrl = http://localhost:8080
+
+router.use(authenticateToken); // Secure all routes
 
 //ROUTES
 //1. POST -- Create
